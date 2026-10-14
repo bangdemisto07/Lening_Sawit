@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>"Lening Pohon Sawit ( Jarak Tanam Pohon sawit )"</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: #ffffff;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lening Pohon Sawit (Jarak Tanam Pohon Sawit)</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+    <!-- Atribut allow ditambahkan fitur autoplay dan media terkait -->
+    <iframe id="appFrame" allow="autoplay; encrypted-media; fullscreen; geolocation; microphone; camera"></iframe>
 
-  <!-- Iframe dengan izin autoplay suara -->
-  <iframe id="webAppFrame" src="" allow="autoplay; encrypted-media"></iframe>
-
-  <script>
-    const baseUrl = "https://script.google.com/macros/s/AKfycbxhAj8f1q53k9j1QL2wdmJfpCn4ViCEQ2HOtnh44jkwdznC_NCdKjc9WqKd_OaIXeSK/exec";
-    const urlParams = window.location.search;
-    document.getElementById("webAppFrame").src = baseUrl + urlParams;
-  </script>
-
+    <script>
+        // URL dasar Apps Script Anda
+        const baseUrl = "https://script.google.com/macros/s/AKfycbxhAj8f1q53k9j1QL2wdmJfpCn4ViCEQ2HOtnh44jkwdznC_NCdKjc9WqKd_OaIXeSK/exec";
+        
+        // Mengambil parameter (seperti ?to=NamaTamu) dari URL GitHub Pages
+        const currentParams = window.location.search;
+        
+        // Memasang URL Apps Script beserta parameter nama tamu ke iFrame
+        document.getElementById('appFrame').src = baseUrl + currentParams;
+    </script>
 </body>
 </html>
